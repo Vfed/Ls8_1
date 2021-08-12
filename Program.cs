@@ -2,15 +2,14 @@
 
 namespace Ls8_1
 {
-    class Field
+    class Cell
     {
-        public Field(int t) 
+        public Cell(int t) 
         {
             this.type = t;
         }
-        
         int type = 0;
-        public static void Show(Field[,] field)
+        public static void Show(Cell[,] field)
         {
             for (int i = 0; i < field.GetLength(0); i++)
             {
@@ -42,15 +41,15 @@ namespace Ls8_1
         {
             int n = 10;
             Random r = new Random();
-            Field[,] field = new Field[n, n];
+            Cell[,] field = new Cell[n, n];
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    field[i, j] = new Field((int)r.Next(3));
+                    field[i, j] = new Cell((int)r.Next(3));
                 }
             }
-            Field.Show(field);
+            Cell.Show(field);
             Console.ReadLine();
         } 
     }
